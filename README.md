@@ -1,20 +1,10 @@
-# New Repository Template
+# Liora
 
-This template contains all of our basic files for a new GitHub repository. There is also a handy workflow that will create an issue on a new repository made from this template, with a checklist for the steps we usually take in setting up a new repository.
-
-If you're starting a Node.JS project with TypeScript, we have a [specific template](https://github.com/naomi-lgbt/nodejs-typescript-template) for that purpose.
-
-## Readme
-
-Delete all of the above text (including this line), and uncomment the below text to use our standard readme template.
-
-<!-- # Project Name
-
-Project Description
+A Discord bot that allows you to configure "highlight" words. When a message includes one of your words, you will be notified!
 
 ## Live Version
 
-This page is currently deployed. [View the live website.]
+This page is currently deployed. [Add to Discord!](https://discord.com/oauth2/authorize?client_id=1391492296222179459)
 
 ## Feedback and Bugs
 
@@ -36,4 +26,4 @@ Copyright held by Naomi Carrigan.
 
 ## Contact
 
-We may be contacted through our [Chat Server](http://chat.nhcarrigan.com) or via email at `contact@nhcarrigan.com`. -->
+We may be contacted through our [Chat Server](http://chat.nhcarrigan.com) or via email at `contact@nhcarrigan.com`.
