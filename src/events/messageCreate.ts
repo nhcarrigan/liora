@@ -42,10 +42,6 @@ const messageCreate = async(
     return;
   }
 
-  await logger.metric("highlight_triggered", highlights.length, {
-    guildId: message.guild.id,
-  });
-
   await Promise.all(
     // eslint-disable-next-line max-lines-per-function -- It's mostly components.
     highlights.map(async(record) => {
@@ -62,6 +58,11 @@ const messageCreate = async(
       if (foundWords.length <= 0) {
         return;
       }
+      await logger.metric("highlight_triggered", foundWords.length, {
+        serverId: message.guild.id,
+        userId:   record.userId,
+        words:    foundWords.join(", "),
+      });
       const dm = await message.client.users.fetch(record.userId).catch(() => {
         return null;
       });
