@@ -4,6 +4,7 @@
  * @author Naomi Carrigan
  */
 
+import { DiscordAnalytics } from "@nhcarrigan/discord-analytics";
 import { PrismaClient } from "@prisma/client";
 import {
   Client,
@@ -25,17 +26,20 @@ const liora: Liora = {
       GatewayIntentBits.MessageContent,
     ],
   }),
-
 };
+
+const analytics = new DiscordAnalytics(liora.discord, logger);
 
 liora.discord.once(Events.ClientReady, () => {
   void logger.log(
     "debug",
     `Logged in as ${liora.discord.user?.username ?? "unknown"}`,
   );
+  analytics.startCron();
 });
 
 liora.discord.on(Events.InteractionCreate, (interaction) => {
+  void analytics.logGatewayEvent(Events.InteractionCreate, { ...interaction });
   if (interaction.isChatInputCommand()) {
     if (!interaction.inCachedGuild()) {
       void interaction.reply({

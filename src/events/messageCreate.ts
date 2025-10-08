@@ -15,6 +15,7 @@ import {
   type Message,
 } from "discord.js";
 import { checkGuildEntitlement } from "../utils/checkEntitlement.js";
+import { logger } from "../utils/logger.js";
 import type { Liora } from "../interfaces/liora.js";
 
 /**
@@ -40,6 +41,10 @@ const messageCreate = async(
   if (highlights.length <= 0) {
     return;
   }
+
+  await logger.metric("highlight_triggered", highlights.length, {
+    guildId: message.guild.id,
+  });
 
   await Promise.all(
     // eslint-disable-next-line max-lines-per-function -- It's mostly components.
