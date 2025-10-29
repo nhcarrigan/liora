@@ -1,6 +1,6 @@
 {
   "name": "liora",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Discord bot that automatically deletes messages from a venting channel.",
   "main": "index.js",
   "type": "module",
