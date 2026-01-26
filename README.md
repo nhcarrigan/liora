@@ -8,7 +8,7 @@ This page is currently deployed. [Add to Discord!](https://discord.com/oauth2/au
 
 ## Feedback and Bugs
 
-If you have feedback or a bug report, please feel free to open a GitHub issue!
+If you have feedback or a bug report, please [log a ticket on our forum](https://support.nhcarrigan.com).
 
 ## Contributing
 
